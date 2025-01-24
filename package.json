@@ -1,0 +1,20 @@
+{
+  "name": "expenses_tracker",
+  "version": "1.0.0",
+  "description": "Tracker of the expenses in Vaquero Wings",
+  "homepage": "https://github.com/axelquartz/expenses_tracker#readme",
+  "bugs": {
+    "url": "https://github.com/axelquartz/expenses_tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelquartz/expenses_tracker.git"
+  },
+  "license": "MIT",
+  "author": "Axel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
