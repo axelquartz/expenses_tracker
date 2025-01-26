@@ -1,5 +1,7 @@
 const sumArr = []
 // const userQuantity = document.getElementById('item-value')
+const calcBtn = document.querySelector('.calc-btn')
+const total = document.querySelector('#total h2')
 
 // Item template
 class Item {
@@ -87,3 +89,8 @@ const salchicha = new Item ({
 })
 
 salchichaAddBtn.addEventListener('click', salchicha.calcPrice)
+
+calcBtn.addEventListener('click', function() {
+    const sum = sumArr.reduce((acc, curr) => acc + curr)
+    total.textContent = `Total is: ${sum}`
+})
