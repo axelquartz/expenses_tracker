@@ -19,18 +19,25 @@
         color: #333;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-weight: 700;
-        background-color: yellowgreen;
+        /* background-color: yellowgreen; */
+        margin: 0 0 4px 0;
+    }
+
+    button {
+        border-radius: 8px;
+        border: none;
     }
 
     .item-input {
         background-color: #fff;
+        border-radius: 8px;
         padding: 16px 0;
         margin: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
-        margin: 16px auto;
+        margin: 12px auto;
         width: 100%;
     }
 
@@ -38,6 +45,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 4px;
         width: 90%;
         margin: 4px auto;
     }
@@ -45,22 +53,42 @@
     input {
         width: 20%;
         margin: 0 4px;
-        height: 20px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid #333;
     }
 
     .input button {
         width: 80%;
+        background-color: #ddd;
+        font-weight: bold;
     }
 
     #result {
-        margin: 32px auto;
-        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        margin: 16px auto;
+        padding: 16px 0 0 0;
+        width: 100%;
+        background-color: #fff;
     }
 
     .calc-btn {
-        width: 100%;
+        width: 90%;
         height: 40px;
+        background-color: green;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
     }
+
+
+
+
 
 }
 

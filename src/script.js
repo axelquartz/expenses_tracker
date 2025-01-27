@@ -41,6 +41,7 @@ bonelessRemoveBtn.addEventListener('click', function() {
 
 // Alitas
 const alitasAddBtn = document.getElementById('alitas-add-btn')
+const alitasRemoveBtn = document.getElementById('alitas-remove-btn')
 const userAlitasQuantity = document.getElementById('user-alitas-quantity')
 
 const alitas = new Item ({
@@ -49,10 +50,19 @@ const alitas = new Item ({
     userQuantity: userAlitasQuantity,
 })
 
-alitasAddBtn.addEventListener('click', alitas.calcPrice)
+alitasAddBtn.addEventListener('click', function() {
+    userAlitasQuantity.value++
+})
+
+alitasRemoveBtn.addEventListener('click', function() {
+    if (userAlitasQuantity.value > 0) {
+        userAlitasQuantity.value--
+    }
+})
 
 // Dedos de Queso
 const dedosAddBtn = document.getElementById('dedos-add-btn')
+const dedosRemoveBtn = document.getElementById('dedos-remove-btn')
 const userDedosQuantity = document.getElementById('user-dedos-quantity')
 
 const dedos = new Item ({
@@ -61,10 +71,19 @@ const dedos = new Item ({
     userQuantity: userDedosQuantity,
 })
 
-dedosAddBtn.addEventListener('click', dedos.calcPrice)
+dedosAddBtn.addEventListener('click', function() {
+    userDedosQuantity.value++
+})
+
+dedosRemoveBtn.addEventListener('click', function() {
+    if (userDedosQuantity.value > 0) {
+        userDedosQuantity.value--
+    }
+})
 
 // Papas Francesas
 const francesasAddBtn = document.getElementById('francesas-add-btn')
+const francesasRemoveBtn = document.getElementById('francesas-remove-btn')
 const userFrancesasQuantity = document.getElementById('user-francesas-quantity')
 
 const francesas = new Item ({
@@ -73,10 +92,19 @@ const francesas = new Item ({
     userQuantity: userFrancesasQuantity,
 })
 
-francesasAddBtn.addEventListener('click', francesas.calcPrice)
+francesasAddBtn.addEventListener('click', function() {
+    userFrancesasQuantity.value++
+})
+
+francesasRemoveBtn.addEventListener('click', function() {
+    if (userFrancesasQuantity.value > 0) {
+        userFrancesasQuantity.value--
+    }
+})
 
 // Papas Gajo
 const gajoAddBtn = document.getElementById('gajo-add-btn')
+const gajoRemoveBtn = document.getElementById('gajo-remove-btn')
 const userGajoQuantity = document.getElementById('user-gajo-quantity')
 
 const gajo = new Item ({
@@ -85,10 +113,19 @@ const gajo = new Item ({
     userQuantity: userGajoQuantity,
 })
 
-gajoAddBtn.addEventListener('click', gajo.calcPrice)
+gajoAddBtn.addEventListener('click', function() {
+    userGajoQuantity.value++
+})
+
+gajoRemoveBtn.addEventListener('click', function() {
+    if (userGajoQuantity.value > 0) {
+        userGajoQuantity.value--
+    }
+})
 
 // Salchicha
 const salchichaAddBtn = document.getElementById('salchicha-add-btn')
+const salchichaRemoveBtn = document.getElementById('salchicha-remove-btn')
 const userSalchichaQuantity = document.getElementById('user-salchicha-quantity')
 
 const salchicha = new Item ({
@@ -97,12 +134,21 @@ const salchicha = new Item ({
     userQuantity: userSalchichaQuantity,
 })
 
+salchichaAddBtn.addEventListener('click', function() {
+    userSalchichaQuantity.value++
+})
+
+salchichaRemoveBtn.addEventListener('click', function() {
+    if (userSalchichaQuantity.value > 0) {
+        userSalchichaQuantity.value--
+    }
+})
+
+// Display Total
 function displayTotal() {
     const sum = sumArr.reduce((acc, curr) => acc + curr)
     total.textContent = `Total is: ${sum}`  
 }
-
-salchichaAddBtn.addEventListener('click', salchicha.calcPrice)
 
 calcBtn.addEventListener('click', function() {
     if (sumArr.length === 0) {
