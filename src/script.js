@@ -20,6 +20,7 @@ class Item {
 
 // Boneless
 const bonelessAddBtn = document.getElementById('boneless-add-btn')
+const bonelessRemoveBtn = document.getElementById('boneless-remove-btn')
 const userBonelessQuantity = document.getElementById('user-boneless-quantity')
 
 const boneless = new Item ({
@@ -28,7 +29,15 @@ const boneless = new Item ({
     userQuantity: userBonelessQuantity,
 })
 
-bonelessAddBtn.addEventListener('click', boneless.calcPrice)
+bonelessAddBtn.addEventListener('click', function() {
+    userBonelessQuantity.value++
+})
+
+bonelessRemoveBtn.addEventListener('click', function() {
+    if (userBonelessQuantity.value > 0) {
+        userBonelessQuantity.value--
+    }
+})
 
 // Alitas
 const alitasAddBtn = document.getElementById('alitas-add-btn')
