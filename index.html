@@ -8,59 +8,65 @@
     <title>Expenses Tracker</title>
 </head>
 <body>
-    <h1>Expenses Tracker</h1>
-    <div class="item-input">
-        <label for="item-name">Boneless</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-boneless-quantity">
-            <button id="boneless-add-btn">+</button>
-            <button id="boneless-remove-btn">-</button>
+    <div id="all-items">
+        <h1>Expenses Tracker</h1>
+
+        <div class="item-input">
+            <label for="item-name">Boneless</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-boneless-quantity">
+                <button id="boneless-add-btn">+</button>
+                <button id="boneless-remove-btn">-</button>
+            </div>
         </div>
-    </div>
-    <div class="item-input">
-        <label for="item-name">Alitas</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-alitas-quantity">
-            <button id="alitas-add-btn">+</button>
-            <button id="alitas-remove-btn">-</button>
+        <div class="item-input">
+            <label for="item-name">Alitas</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-alitas-quantity">
+                <button id="alitas-add-btn">+</button>
+                <button id="alitas-remove-btn">-</button>
+            </div>
         </div>
-    </div>
-    <div class="item-input">
-        <label for="item-name">Dedos de Queso</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-dedos-quantity">
-            <button id="dedos-add-btn">+</button>
-            <button id="dedos-remove-btn">-</button>
+        <div class="item-input">
+            <label for="item-name">Dedos de Queso</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-dedos-quantity">
+                <button id="dedos-add-btn">+</button>
+                <button id="dedos-remove-btn">-</button>
+            </div>
         </div>
-    </div>
-    <div class="item-input">
-        <label for="item-name">Papas Francesas</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-francesas-quantity">
-            <button id="francesas-add-btn">+</button>
-            <button id="francesas-remove-btn">-</button>
+        <div class="item-input">
+            <label for="item-name">Papas Francesas</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-francesas-quantity">
+                <button id="francesas-add-btn">+</button>
+                <button id="francesas-remove-btn">-</button>
+            </div>
         </div>
-    </div>
-    <div class="item-input">
-        <label for="item-name">Papas Gajo</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-gajo-quantity">
-            <button id="gajo-add-btn">+</button>
-            <button id="gajo-remove-btn">-</button>
+        <div class="item-input">
+            <label for="item-name">Papas Gajo</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-gajo-quantity">
+                <button id="gajo-add-btn">+</button>
+                <button id="gajo-remove-btn">-</button>
+            </div>
         </div>
-    </div>
-    <div class="item-input">
-        <label for="item-name">Salchicha</label>
-        <div class="input">
-            <input type="number" name="item-value" id="user-salchicha-quantity">
-            <button id="salchicha-add-btn">+</button>
-            <button id="salchicha-remove-btn">-</button>
+        <div class="item-input">
+            <label for="item-name">Salchicha</label>
+            <div class="input">
+                <input type="number" name="item-value" id="user-salchicha-quantity">
+                <button id="salchicha-add-btn">+</button>
+                <button id="salchicha-remove-btn">-</button>
+            </div>
         </div>
     </div>
     <div id="result">
-        <button class="calc-btn">Calculate</button>
+        <div class="result-btns">
+            <button class="calc-btn">Calculate</button>
+            <button class="reset-btn">X</button>
+        </div>
         <div id="total">
-            <h2>Total</h2>
+            <h2>--</h2>
         </div>
     </div>
 </body>

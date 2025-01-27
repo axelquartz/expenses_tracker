@@ -1,18 +1,19 @@
 /* Normal Mode */
 @media screen and (max-width: 600px) {
     body {
-        background-color: #ededed;
+        background-color: #f7f7f7;
     }
     h1 {
         color: #333;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
-        margin: 32px 0;
+        margin: 16px 0;
     }
 
     h2 {
         color: #333;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 12px auto;
     }
 
     label {
@@ -26,6 +27,16 @@
     button {
         border-radius: 8px;
         border: none;
+    }
+
+    #all-items {
+        z-index: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: scroll;
+        height: 84%;
+        width: 100%;
     }
 
     .item-input {
@@ -56,6 +67,8 @@
         height: 32px;
         border-radius: 8px;
         border: 1px solid #333;
+        background-color: #f7f7f7;
+
     }
 
     .input button {
@@ -65,30 +78,50 @@
     }
 
     #result {
+        z-index: 1;
+        position: fixed;
+        bottom: 0;
+        left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 8px;
-        margin: 16px auto;
+        margin: 16px auto 0 auto;
         padding: 16px 0 0 0;
         width: 100%;
         background-color: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .result-btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        gap: 4px;
     }
 
     .calc-btn {
-        width: 90%;
+        width: 88%;
         height: 40px;
         background-color: green;
-        border: none;
+        border: solid 1px green;
         border-radius: 8px;
         color: #fff;
         font-size: 16px;
         font-weight: bold;
     }
 
-
-
-
+    .reset-btn {
+        width: 12%;
+        height: 40px;
+        border: solid 1px coral;
+        background-color: #fff;
+        border-radius: 8px;
+        color: coral;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
 }
 

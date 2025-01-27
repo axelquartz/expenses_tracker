@@ -1,6 +1,7 @@
-const sumArr = []
+let sumArr = []
 // const userQuantity = document.getElementById('item-value')
 const calcBtn = document.querySelector('.calc-btn')
+const resetBtn = document.querySelector('.reset-btn')
 const total = document.querySelector('#total h2')
 
 // Item template
@@ -150,6 +151,7 @@ function displayTotal() {
     total.textContent = `Total is: ${sum}`  
 }
 
+//Calc SumArr
 calcBtn.addEventListener('click', function() {
     if (sumArr.length === 0) {
         console.log('Empty mode');
@@ -165,4 +167,16 @@ calcBtn.addEventListener('click', function() {
         console.log('Normal mode');
     displayTotal()
     }
+})
+
+// Reset
+resetBtn.addEventListener('click', function() {
+    sumArr = []
+    total.textContent = '--' 
+    userBonelessQuantity.value = '';
+    userAlitasQuantity.value = '';
+    userDedosQuantity.value = '';
+    userFrancesasQuantity.value = '';
+    userGajoQuantity.value = '';
+    userSalchichaQuantity.value = '';
 })
