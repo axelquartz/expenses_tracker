@@ -88,9 +88,26 @@ const salchicha = new Item ({
     userQuantity: userSalchichaQuantity,
 })
 
+function displayTotal() {
+    const sum = sumArr.reduce((acc, curr) => acc + curr)
+    total.textContent = `Total is: ${sum}`  
+}
+
 salchichaAddBtn.addEventListener('click', salchicha.calcPrice)
 
 calcBtn.addEventListener('click', function() {
-    const sum = sumArr.reduce((acc, curr) => acc + curr)
-    total.textContent = `Total is: ${sum}`
+    if (sumArr.length === 0) {
+        console.log('Empty mode');
+        
+        boneless.calcPrice()
+        alitas.calcPrice()
+        dedos.calcPrice()
+        francesas.calcPrice()
+        gajo.calcPrice()
+        salchicha.calcPrice()
+        displayTotal()
+    }else {
+        console.log('Normal mode');
+    displayTotal()
+    }
 })
