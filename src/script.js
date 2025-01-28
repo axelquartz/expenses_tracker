@@ -152,7 +152,7 @@ const userCremaQuantity = document.getElementById('user-crema-quantity')
 
 const crema = new Item ({
     name: 'Crema',
-    unitPrice: 50,
+    unitPrice: 25,
     userQuantity: userCremaQuantity,
 })
 
@@ -173,7 +173,7 @@ const userMayonesaQuantity = document.getElementById('user-mayonesa-quantity')
 
 const mayonesa = new Item ({
     name: 'Mayonesa',
-    unitPrice: 50,
+    unitPrice: 25,
     userQuantity: userMayonesaQuantity,
 })
 
@@ -194,7 +194,7 @@ const userCatsupQuantity = document.getElementById('user-catsup-quantity')
 
 const catsup = new Item ({
     name: 'Catsup',
-    unitPrice: 50,
+    unitPrice: 25,
     userQuantity: userCatsupQuantity,
 })
 
@@ -215,7 +215,7 @@ const userMostazaQuantity = document.getElementById('user-mostaza-quantity')
 
 const mostaza = new Item ({
     name: 'Mostaza',
-    unitPrice: 50,
+    unitPrice: 20,
     userQuantity: userMostazaQuantity,
 })
 
@@ -236,7 +236,7 @@ const userRanchQuantity = document.getElementById('user-ranch-quantity')
 
 const ranch = new Item ({
     name: 'Ranch',
-    unitPrice: 50,
+    unitPrice: 70,
     userQuantity: userRanchQuantity,
 })
 
@@ -320,7 +320,7 @@ const userCueritosQuantity = document.getElementById('user-cueritos-quantity')
 
 const cueritos = new Item ({
     name: 'Cueritos',
-    unitPrice: 50,
+    unitPrice: 30,
     userQuantity: userCueritosQuantity,
 })
 
@@ -341,7 +341,7 @@ const userElotesQuantity = document.getElementById('user-elotes-quantity')
 
 const elotes = new Item ({
     name: 'Elotes',
-    unitPrice: 50,
+    unitPrice: 120,
     userQuantity: userElotesQuantity,
 })
 
