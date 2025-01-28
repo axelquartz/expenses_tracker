@@ -145,6 +145,216 @@ salchichaRemoveBtn.addEventListener('click', function() {
     }
 })
 
+// Crema
+const cremaAddBtn = document.getElementById('crema-add-btn')
+const cremaRemoveBtn = document.getElementById('crema-remove-btn')
+const userCremaQuantity = document.getElementById('user-crema-quantity')
+
+const crema = new Item ({
+    name: 'Crema',
+    unitPrice: 50,
+    userQuantity: userCremaQuantity,
+})
+
+cremaAddBtn.addEventListener('click', function() {
+    userCremaQuantity.value++
+})
+
+cremaRemoveBtn.addEventListener('click', function() {
+    if (userCremaQuantity.value > 0) {
+        userCremaQuantity.value--
+    }
+})
+
+// Mayonesa
+const mayonesaAddBtn = document.getElementById('mayonesa-add-btn')
+const mayonesaRemoveBtn = document.getElementById('mayonesa-remove-btn')
+const userMayonesaQuantity = document.getElementById('user-mayonesa-quantity')
+
+const mayonesa = new Item ({
+    name: 'Mayonesa',
+    unitPrice: 50,
+    userQuantity: userMayonesaQuantity,
+})
+
+mayonesaAddBtn.addEventListener('click', function() {
+    userMayonesaQuantity.value++
+})
+
+mayonesaRemoveBtn.addEventListener('click', function() {
+    if (userMayonesaQuantity.value > 0) {
+        userMayonesaQuantity.value--
+    }
+})
+
+// Catsup
+const catsupAddBtn = document.getElementById('catsup-add-btn')
+const catsupRemoveBtn = document.getElementById('catsup-remove-btn')
+const userCatsupQuantity = document.getElementById('user-catsup-quantity')
+
+const catsup = new Item ({
+    name: 'Catsup',
+    unitPrice: 50,
+    userQuantity: userCatsupQuantity,
+})
+
+catsupAddBtn.addEventListener('click', function() {
+    userCatsupQuantity.value++
+})
+
+catsupRemoveBtn.addEventListener('click', function() {
+    if (userCatsupQuantity.value > 0) {
+        userCatsupQuantity.value--
+    }
+})
+
+// Mostaza
+const mostazaAddBtn = document.getElementById('mostaza-add-btn')
+const mostazaRemoveBtn = document.getElementById('mostaza-remove-btn')
+const userMostazaQuantity = document.getElementById('user-mostaza-quantity')
+
+const mostaza = new Item ({
+    name: 'Mostaza',
+    unitPrice: 50,
+    userQuantity: userMostazaQuantity,
+})
+
+mostazaAddBtn.addEventListener('click', function() {
+    userMostazaQuantity.value++
+})
+
+mostazaRemoveBtn.addEventListener('click', function() {
+    if (userMostazaQuantity.value > 0) {
+        userMostazaQuantity.value--
+    }
+})
+
+// Ranch
+const ranchAddBtn = document.getElementById('ranch-add-btn')
+const ranchRemoveBtn = document.getElementById('ranch-remove-btn')
+const userRanchQuantity = document.getElementById('user-ranch-quantity')
+
+const ranch = new Item ({
+    name: 'Ranch',
+    unitPrice: 50,
+    userQuantity: userRanchQuantity,
+})
+
+ranchAddBtn.addEventListener('click', function() {
+    userRanchQuantity.value++
+})
+
+ranchRemoveBtn.addEventListener('click', function() {
+    if (userRanchQuantity.value > 0) {
+        userRanchQuantity.value--
+    }
+})
+
+// Buffalo
+const buffaloAddBtn = document.getElementById('buffalo-add-btn')
+const buffaloRemoveBtn = document.getElementById('buffalo-remove-btn')
+const userBuffaloQuantity = document.getElementById('user-buffalo-quantity')
+
+const buffalo = new Item ({
+    name: 'Buffalo',
+    unitPrice: 50,
+    userQuantity: userBuffaloQuantity,
+})
+
+buffaloAddBtn.addEventListener('click', function() {
+    userBuffaloQuantity.value++
+})
+
+buffaloRemoveBtn.addEventListener('click', function() {
+    if (userBuffaloQuantity.value > 0) {
+        userBuffaloQuantity.value--
+    }   
+})
+
+// BBQ
+const bbqAddBtn = document.getElementById('bbq-add-btn')
+const bbqRemoveBtn = document.getElementById('bbq-remove-btn')
+const userBbqQuantity = document.getElementById('user-bbq-quantity')
+
+const bbq = new Item ({
+    name: 'BBQ',
+    unitPrice: 50,
+    userQuantity: userBbqQuantity,
+})
+
+bbqAddBtn.addEventListener('click', function() {
+    userBbqQuantity.value++
+})
+
+bbqRemoveBtn.addEventListener('click', function() {
+    if (userBbqQuantity.value > 0) {
+        userBbqQuantity.value--
+    }
+})
+
+// Mango Habanero
+const mangoAddBtn = document.getElementById('mango-add-btn')
+const mangoRemoveBtn = document.getElementById('mango-remove-btn')
+const userMangoQuantity = document.getElementById('user-mango-quantity')
+
+const mango = new Item ({
+    name: 'Mango Habanero',
+    unitPrice: 50,
+    userQuantity: userMangoQuantity,
+})
+
+mangoAddBtn.addEventListener('click', function() {
+    userMangoQuantity.value++
+})
+
+mangoRemoveBtn.addEventListener('click', function() {
+    if (userMangoQuantity.value > 0) {
+        userMangoQuantity.value--
+    }
+})
+
+// Cueritos
+const cueritosAddBtn = document.getElementById('cueritos-add-btn')
+const cueritosRemoveBtn = document.getElementById('cueritos-remove-btn')
+const userCueritosQuantity = document.getElementById('user-cueritos-quantity')
+
+const cueritos = new Item ({
+    name: 'Cueritos',
+    unitPrice: 50,
+    userQuantity: userCueritosQuantity,
+})
+
+cueritosAddBtn.addEventListener('click', function() {
+    userCueritosQuantity.value++
+})
+
+cueritosRemoveBtn.addEventListener('click', function() {
+    if (userCueritosQuantity.value > 0) {
+        userCueritosQuantity.value--
+    }
+})
+
+// Elotes
+const elotesAddBtn = document.getElementById('elotes-add-btn')
+const elotesRemoveBtn = document.getElementById('elotes-remove-btn')
+const userElotesQuantity = document.getElementById('user-elotes-quantity')
+
+const elotes = new Item ({
+    name: 'Elotes',
+    unitPrice: 50,
+    userQuantity: userElotesQuantity,
+})
+
+elotesAddBtn.addEventListener('click', function() {
+    userElotesQuantity.value++
+})
+
+elotesRemoveBtn.addEventListener('click', function() {
+    if (userElotesQuantity.value > 0) {
+        userElotesQuantity.value--
+    }
+})
+
 // Display Total
 function displayTotal() {
     const sum = sumArr.reduce((acc, curr) => acc + curr)
