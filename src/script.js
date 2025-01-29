@@ -4,6 +4,12 @@ const calcBtn = document.querySelector('.calc-btn')
 const resetBtn = document.querySelector('.reset-btn')
 const total = document.querySelector('#total h2')
 
+//Grid ares
+const itemInputs = document.querySelectorAll('.item-input')
+for (let i = 0; i < itemInputs.length; i++) {
+    itemInputs[i].setAttribute('style', 'grid-area: item' + (i + 1))
+}
+
 // Item template
 class Item {
     constructor({name, unitPrice, userQuantity, calcPrice}) {
