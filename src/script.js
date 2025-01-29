@@ -424,9 +424,17 @@ const rootElement = document.documentElement;
 darkModeToggle.addEventListener('click', function() {
     const currentTheme = rootElement.getAttribute('data-theme')
     if (currentTheme === 'dark') {
+        localStorage.removeItem('dark')
         rootElement.removeAttribute('data-theme')
     } else {
+        localStorage.setItem('dark', 'dark')
         rootElement.setAttribute('data-theme', 'dark')
     }
     }
 )
+
+const savedTheme = localStorage.getItem('dark')
+if (savedTheme === 'dark') {
+    rootElement.setAttribute('data-theme', savedTheme)
+    console.log(savedTheme);
+}
