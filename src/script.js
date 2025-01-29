@@ -372,6 +372,16 @@ calcBtn.addEventListener('click', function() {
         francesas.calcPrice()
         gajo.calcPrice()
         salchicha.calcPrice()
+        crema.calcPrice()
+        mayonesa.calcPrice()
+        catsup.calcPrice()
+        mostaza.calcPrice()
+        ranch.calcPrice()
+        buffalo.calcPrice()
+        bbq.calcPrice()
+        mango.calcPrice()
+        cueritos.calcPrice()
+        elotes.calcPrice()
         displayTotal()
     }else {
         console.log('Normal mode');
@@ -389,4 +399,14 @@ resetBtn.addEventListener('click', function() {
     userFrancesasQuantity.value = '';
     userGajoQuantity.value = '';
     userSalchichaQuantity.value = '';
+    userCremaQuantity.value = '';
+    userMayonesaQuantity.value = '';
+    userCatsupQuantity.value = '';
+    userMostazaQuantity.value = '';
+    userRanchQuantity.value = '';
+    userBuffaloQuantity.value = '';
+    userBbqQuantity.value = '';
+    userMangoQuantity.value = '';
+    userCueritosQuantity.value = '';
+    userElotesQuantity.value = '';
 })
