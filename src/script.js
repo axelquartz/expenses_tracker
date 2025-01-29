@@ -413,34 +413,14 @@ resetBtn.addEventListener('click', function() {
 
 // Dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle')
+const rootElement = document.documentElement;
 
 darkModeToggle.addEventListener('click', function() {
-    const body = document.querySelector('body')
-    body.classList.toggle('dark-mode')
-    const h1 = document.querySelector('h1')
-    h1.classList.toggle('dark-mode')
-    const h2 = document.querySelector('h2')
-    h2.classList.toggle('dark-mode')
-    const label = document.querySelectorAll('label')
-    label.forEach(label => {
-        label.classList.toggle('dark-mode')
-    })
-    const itemInput = document.querySelectorAll('.item-input')
-    itemInput.forEach(itemInput => {
-        itemInput.classList.toggle('dark-mode')
-    })
-    const input = document.querySelectorAll('input')
-    input.forEach(input => {
-        input.classList.toggle('dark-mode')
-    })
-    const inputButton = document.querySelectorAll('.input button')
-    inputButton.forEach(inputButton => {
-        inputButton.classList.toggle('dark-mode')
-    })
-    const result = document.querySelector('.result')
-    result.classList.toggle('dark-mode')
-    const calcBtn = document.querySelector('.calc-btn')
-    calcBtn.classList.toggle('dark-mode')
-    const resetBtn = document.querySelector('.reset-btn')
-    resetBtn.classList.toggle('dark-mode')
-})
+    const currentTheme = rootElement.getAttribute('data-theme')
+    if (currentTheme === 'dark') {
+        rootElement.removeAttribute('data-theme')
+    } else {
+        rootElement.setAttribute('data-theme', 'dark')
+    }
+    }
+)
