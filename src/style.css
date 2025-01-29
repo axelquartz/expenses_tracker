@@ -28,7 +28,6 @@
         border-radius: 8px;
         border: none;
     }
-
     #all-items {
         z-index: 0;
         position: fixed;
@@ -61,6 +60,24 @@
         margin: 4px auto;
     }
 
+    #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    #header button {
+        background-color: #fff;
+        border-radius: 8px;
+        border: solid 1px #333;
+        color: #000;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
     input {
         width: 20%;
         margin: 0 4px;
@@ -77,7 +94,7 @@
         font-weight: bold;
     }
 
-    #result {
+    .result {
         z-index: 1;
         position: fixed;
         bottom: 0;
@@ -155,6 +172,24 @@
         border: none;
     }
 
+    #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    #header button {
+        background-color: #fff;
+        border-radius: 8px;
+        border: solid 1px #333;
+        color: #000;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
     #all-items {
         z-index: 0;
         position: fixed;
@@ -202,7 +237,7 @@
         font-weight: bold;
     }
 
-    #result {
+    .result {
         z-index: 1;
         position: fixed;
         bottom: 0;
@@ -278,4 +313,63 @@
 .reset-btn:active {
     background-color: #000;
     color: #fff;
+}
+
+/* Dark Mode Classes */
+
+.dark-mode {
+    background-color: #232323;
+    color: #fff;
+}
+h1 .dark-mode {
+    color: #fff;
+}
+
+h2 .dark-mode {
+    color: #fff;
+}
+
+label .dark-mode {
+    color: #fff;
+    background-color: #333;
+}
+
+.item-input .dark-mode {
+    background-color: #333;
+}
+
+input .dark-mode {
+    border: 1px solid #fff;
+    background-color: #333;
+
+}
+
+.input button .dark-mode {
+    background-color: #444;
+}
+
+.result .dark-mode {
+    background-color: #333;
+}
+
+.calc-btn .dark-mode {
+    width: 88%;
+    height: 40px;
+    background-color: green;
+    border: solid 1px green;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reset-btn .dark-mode {
+    width: 12%;
+    height: 40px;
+    border: solid 1px coral;
+    background-color: #333;
+    border-radius: 8px;
+    color: coral;
+    font-size: 16px;
+    font-weight: bold;
 }
