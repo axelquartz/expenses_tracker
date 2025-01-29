@@ -16,5 +16,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "airtable": "^0.12.2",
+    "firebase": "^11.2.0"
   }
 }

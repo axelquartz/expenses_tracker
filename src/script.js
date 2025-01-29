@@ -1,14 +1,33 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDaHmRXwRRIKqBWM_VIVV6Sdhsp9Qx-EYE",
+  authDomain: "profitability-tracker-f5eac.firebaseapp.com",
+  projectId: "profitability-tracker-f5eac",
+  storageBucket: "profitability-tracker-f5eac.firebasestorage.app",
+  messagingSenderId: "139368537452",
+  appId: "1:139368537452:web:fbf366650499137df8e749"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+  function save() {
+      const data = 'Hello World'
+      database.ref('items/' + Date.now()).set(data)
+  }
+
+  save()
+
 let sumArr = []
 // const userQuantity = document.getElementById('item-value')
 const calcBtn = document.querySelector('.calc-btn')
 const resetBtn = document.querySelector('.reset-btn')
 const total = document.querySelector('#total h2')
-
-//Grid ares
-const itemInputs = document.querySelectorAll('.item-input')
-for (let i = 0; i < itemInputs.length; i++) {
-    itemInputs[i].setAttribute('style', 'grid-area: item' + (i + 1))
-}
 
 // Item template
 class Item {
@@ -365,8 +384,10 @@ elotesRemoveBtn.addEventListener('click', function() {
 function displayTotal() {
     const sum = sumArr.reduce((acc, curr) => acc + curr)
     total.textContent = `Total is: ${sum}`  
+    const resultToJson = JSON.stringify(sum)
+    localStorage.setItem('total', resultToJson)
+    console.log(`Result: ${resultToJson}, Resultt`);
 }
-
 //Calc SumArr
 calcBtn.addEventListener('click', function() {
     if (sumArr.length === 0) {
