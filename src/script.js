@@ -1,47 +1,26 @@
 // Import Firebase from the initialization file
 import { database, ref, set, onValue } from './firebase-init.js';
 
-// Save all quantities to Firebase
-// function saveToFirebase() {
-//     const expenses = {
-//       quantity: sum || 0,
-//     };
-    
-//     set(ref(database, 'expenses'), expenses);
-//   }
-
   // Load quantities from Firebase
 function loadFromFirebase() {
     onValue(ref(database, 'expenses'), (snapshot) => {
       const data = snapshot.val() || {};
-      
-      userBonelessQuantity.value = data.boneless || 0;
-      userAlitasQuantity.value = data.alitas || 0;
-      userDedosQuantity.value = data.dedos || 0;
-      userFrancesasQuantity.value = data.francesas || 0;
-      userGajoQuantity.value = data.gajo || 0;
-      userSalchichaQuantity.value = data.salchicha || 0;
-      userCremaQuantity.value = data.crema || 0;
-      userMayonesaQuantity.value = data.mayonesa || 0;
-      userCatsupQuantity.value = data.catsup || 0;
-      userMostazaQuantity.value = data.mostaza || 0;
-      userRanchQuantity.value = data.ranch || 0;
-      userBuffaloQuantity.value = data.buffalo || 0;
-      userBbqQuantity.value = data.bbq || 0;
-      userMangoQuantity.value = data.mango || 0;
-      userCueritosQuantity.value = data.cueritos || 0;
-      userElotesQuantity.value = data.elotes || 0;
+    //   storeValues .push(data.quantity)
+      displaySavedVal.textContent = data.quantity || 0;
     });
   }
+
 
   // Initial load
 loadFromFirebase();
 
 let sumArr = []
+let storeValues = []
 // const userQuantity = document.getElementById('item-value')
 const calcBtn = document.querySelector('.calc-btn')
 const resetBtn = document.querySelector('.reset-btn')
 const total = document.querySelector('#total h2')
+const displaySavedVal = document.querySelector('#display-saved-val')
 
 // Item template
 class Item {
@@ -396,11 +375,16 @@ elotesRemoveBtn.addEventListener('click', function() {
 
 // Save all quantities to Firebase
 function saveToFirebase(val) {
+    storeValues.push(val)
     const expenses = {
-      quantity: val || 0,
+      quantity: storeValues,
     };
     
     set(ref(database, 'expenses'), expenses);
+    storeValues.push(val)
+    console.log(storeValues);
+    return storeValues
+    
   }
 
 // Display Total
@@ -412,6 +396,7 @@ function displayTotal() {
     console.log(`Result: ${resultToJson}, Resultt`);
 
     saveToFirebase(sum)
+    return sum
 }
 //Calc SumArr
 calcBtn.addEventListener('click', function() {
