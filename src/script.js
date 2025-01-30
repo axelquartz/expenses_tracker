@@ -1,27 +1,56 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// Import Firebase from the initialization file
+import { database, ref, set, onValue } from './firebase-init.js';
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDaHmRXwRRIKqBWM_VIVV6Sdhsp9Qx-EYE",
-  authDomain: "profitability-tracker-f5eac.firebaseapp.com",
-  projectId: "profitability-tracker-f5eac",
-  storageBucket: "profitability-tracker-f5eac.firebasestorage.app",
-  messagingSenderId: "139368537452",
-  appId: "1:139368537452:web:fbf366650499137df8e749"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-  function save() {
-      const data = 'Hello World'
-      database.ref('items/' + Date.now()).set(data)
+// Save all quantities to Firebase
+function saveToFirebase() {
+    const items = {
+      boneless: userBonelessQuantity.value || 0,
+      alitas: userAlitasQuantity.value || 0,
+      dedos: userDedosQuantity.value || 0,
+      francesas: userFrancesasQuantity.value || 0,
+      gajo: userGajoQuantity.value || 0,
+      salchicha: userSalchichaQuantity.value || 0,
+      crema: userCremaQuantity.value || 0,
+      mayonesa: userMayonesaQuantity.value || 0,
+      catsup: userCatsupQuantity.value || 0,
+      mostaza: userMostazaQuantity.value || 0,
+      ranch: userRanchQuantity.value || 0,
+      buffalo: userBuffaloQuantity.value || 0,
+      bbq: userBbqQuantity.value || 0,
+      mango: userMangoQuantity.value || 0,
+      cueritos: userCueritosQuantity.value || 0,
+      elotes: userElotesQuantity.value || 0
+    };
+    
+    set(ref(database, 'expenses'), items);
   }
 
-  save()
+  // Load quantities from Firebase
+function loadFromFirebase() {
+    onValue(ref(database, 'expenses'), (snapshot) => {
+      const data = snapshot.val() || {};
+      
+      userBonelessQuantity.value = data.boneless || 0;
+      userAlitasQuantity.value = data.alitas || 0;
+      userDedosQuantity.value = data.dedos || 0;
+      userFrancesasQuantity.value = data.francesas || 0;
+      userGajoQuantity.value = data.gajo || 0;
+      userSalchichaQuantity.value = data.salchicha || 0;
+      userCremaQuantity.value = data.crema || 0;
+      userMayonesaQuantity.value = data.mayonesa || 0;
+      userCatsupQuantity.value = data.catsup || 0;
+      userMostazaQuantity.value = data.mostaza || 0;
+      userRanchQuantity.value = data.ranch || 0;
+      userBuffaloQuantity.value = data.buffalo || 0;
+      userBbqQuantity.value = data.bbq || 0;
+      userMangoQuantity.value = data.mango || 0;
+      userCueritosQuantity.value = data.cueritos || 0;
+      userElotesQuantity.value = data.elotes || 0;
+    });
+  }
+
+  // Initial load
+loadFromFirebase();
 
 let sumArr = []
 // const userQuantity = document.getElementById('item-value')
@@ -57,11 +86,13 @@ const boneless = new Item ({
 
 bonelessAddBtn.addEventListener('click', function() {
     userBonelessQuantity.value++
+    saveToFirebase();
 })
 
 bonelessRemoveBtn.addEventListener('click', function() {
     if (userBonelessQuantity.value > 0) {
         userBonelessQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -78,11 +109,13 @@ const alitas = new Item ({
 
 alitasAddBtn.addEventListener('click', function() {
     userAlitasQuantity.value++
+    saveToFirebase();
 })
 
 alitasRemoveBtn.addEventListener('click', function() {
     if (userAlitasQuantity.value > 0) {
         userAlitasQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -99,11 +132,13 @@ const dedos = new Item ({
 
 dedosAddBtn.addEventListener('click', function() {
     userDedosQuantity.value++
+    saveToFirebase();
 })
 
 dedosRemoveBtn.addEventListener('click', function() {
     if (userDedosQuantity.value > 0) {
         userDedosQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -120,11 +155,13 @@ const francesas = new Item ({
 
 francesasAddBtn.addEventListener('click', function() {
     userFrancesasQuantity.value++
+    saveToFirebase();
 })
 
 francesasRemoveBtn.addEventListener('click', function() {
     if (userFrancesasQuantity.value > 0) {
         userFrancesasQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -141,11 +178,13 @@ const gajo = new Item ({
 
 gajoAddBtn.addEventListener('click', function() {
     userGajoQuantity.value++
+    saveToFirebase();
 })
 
 gajoRemoveBtn.addEventListener('click', function() {
     if (userGajoQuantity.value > 0) {
         userGajoQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -162,11 +201,13 @@ const salchicha = new Item ({
 
 salchichaAddBtn.addEventListener('click', function() {
     userSalchichaQuantity.value++
+    saveToFirebase();
 })
 
 salchichaRemoveBtn.addEventListener('click', function() {
     if (userSalchichaQuantity.value > 0) {
         userSalchichaQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -183,11 +224,13 @@ const crema = new Item ({
 
 cremaAddBtn.addEventListener('click', function() {
     userCremaQuantity.value++
+    saveToFirebase();
 })
 
 cremaRemoveBtn.addEventListener('click', function() {
     if (userCremaQuantity.value > 0) {
         userCremaQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -204,11 +247,13 @@ const mayonesa = new Item ({
 
 mayonesaAddBtn.addEventListener('click', function() {
     userMayonesaQuantity.value++
+    saveToFirebase();
 })
 
 mayonesaRemoveBtn.addEventListener('click', function() {
     if (userMayonesaQuantity.value > 0) {
         userMayonesaQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -225,11 +270,13 @@ const catsup = new Item ({
 
 catsupAddBtn.addEventListener('click', function() {
     userCatsupQuantity.value++
+    saveToFirebase();
 })
 
 catsupRemoveBtn.addEventListener('click', function() {
     if (userCatsupQuantity.value > 0) {
         userCatsupQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -246,11 +293,13 @@ const mostaza = new Item ({
 
 mostazaAddBtn.addEventListener('click', function() {
     userMostazaQuantity.value++
+    saveToFirebase();
 })
 
 mostazaRemoveBtn.addEventListener('click', function() {
     if (userMostazaQuantity.value > 0) {
         userMostazaQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -267,11 +316,13 @@ const ranch = new Item ({
 
 ranchAddBtn.addEventListener('click', function() {
     userRanchQuantity.value++
+    saveToFirebase();
 })
 
 ranchRemoveBtn.addEventListener('click', function() {
     if (userRanchQuantity.value > 0) {
         userRanchQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -288,11 +339,13 @@ const buffalo = new Item ({
 
 buffaloAddBtn.addEventListener('click', function() {
     userBuffaloQuantity.value++
+    saveToFirebase();
 })
 
 buffaloRemoveBtn.addEventListener('click', function() {
     if (userBuffaloQuantity.value > 0) {
         userBuffaloQuantity.value--
+        saveToFirebase();
     }   
 })
 
@@ -309,11 +362,13 @@ const bbq = new Item ({
 
 bbqAddBtn.addEventListener('click', function() {
     userBbqQuantity.value++
+    saveToFirebase();
 })
 
 bbqRemoveBtn.addEventListener('click', function() {
     if (userBbqQuantity.value > 0) {
         userBbqQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -330,11 +385,13 @@ const mango = new Item ({
 
 mangoAddBtn.addEventListener('click', function() {
     userMangoQuantity.value++
+    saveToFirebase();
 })
 
 mangoRemoveBtn.addEventListener('click', function() {
     if (userMangoQuantity.value > 0) {
         userMangoQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -351,11 +408,13 @@ const cueritos = new Item ({
 
 cueritosAddBtn.addEventListener('click', function() {
     userCueritosQuantity.value++
+    saveToFirebase();
 })
 
 cueritosRemoveBtn.addEventListener('click', function() {
     if (userCueritosQuantity.value > 0) {
         userCueritosQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -372,11 +431,13 @@ const elotes = new Item ({
 
 elotesAddBtn.addEventListener('click', function() {
     userElotesQuantity.value++
+    saveToFirebase();
 })
 
 elotesRemoveBtn.addEventListener('click', function() {
     if (userElotesQuantity.value > 0) {
         userElotesQuantity.value--
+        saveToFirebase();
     }
 })
 
@@ -436,6 +497,26 @@ resetBtn.addEventListener('click', function() {
     userMangoQuantity.value = '';
     userCueritosQuantity.value = '';
     userElotesQuantity.value = '';
+
+      // Reset Firebase data
+  update(ref(database, 'expenses'), {
+    boneless: 0,
+    alitas: 0,
+    dedos: 0,
+    francesas: 0,
+    gajo: 0,
+    salchicha: 0,
+    crema: 0,
+    mayonesa: 0,
+    catsup: 0,
+    mostaza: 0,
+    ranch: 0,
+    buffalo: 0,
+    bbq: 0,
+    mango: 0,
+    cueritos: 0,
+    elotes: 0
+  });
 })
 
 // Dark mode
