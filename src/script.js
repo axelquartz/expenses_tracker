@@ -2,28 +2,13 @@
 import { database, ref, set, onValue } from './firebase-init.js';
 
 // Save all quantities to Firebase
-function saveToFirebase() {
-    const items = {
-      boneless: userBonelessQuantity.value || 0,
-      alitas: userAlitasQuantity.value || 0,
-      dedos: userDedosQuantity.value || 0,
-      francesas: userFrancesasQuantity.value || 0,
-      gajo: userGajoQuantity.value || 0,
-      salchicha: userSalchichaQuantity.value || 0,
-      crema: userCremaQuantity.value || 0,
-      mayonesa: userMayonesaQuantity.value || 0,
-      catsup: userCatsupQuantity.value || 0,
-      mostaza: userMostazaQuantity.value || 0,
-      ranch: userRanchQuantity.value || 0,
-      buffalo: userBuffaloQuantity.value || 0,
-      bbq: userBbqQuantity.value || 0,
-      mango: userMangoQuantity.value || 0,
-      cueritos: userCueritosQuantity.value || 0,
-      elotes: userElotesQuantity.value || 0
-    };
+// function saveToFirebase() {
+//     const expenses = {
+//       quantity: sum || 0,
+//     };
     
-    set(ref(database, 'expenses'), items);
-  }
+//     set(ref(database, 'expenses'), expenses);
+//   }
 
   // Load quantities from Firebase
 function loadFromFirebase() {
@@ -86,13 +71,11 @@ const boneless = new Item ({
 
 bonelessAddBtn.addEventListener('click', function() {
     userBonelessQuantity.value++
-    saveToFirebase();
 })
 
 bonelessRemoveBtn.addEventListener('click', function() {
     if (userBonelessQuantity.value > 0) {
         userBonelessQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -109,13 +92,11 @@ const alitas = new Item ({
 
 alitasAddBtn.addEventListener('click', function() {
     userAlitasQuantity.value++
-    saveToFirebase();
 })
 
 alitasRemoveBtn.addEventListener('click', function() {
     if (userAlitasQuantity.value > 0) {
         userAlitasQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -132,13 +113,11 @@ const dedos = new Item ({
 
 dedosAddBtn.addEventListener('click', function() {
     userDedosQuantity.value++
-    saveToFirebase();
 })
 
 dedosRemoveBtn.addEventListener('click', function() {
     if (userDedosQuantity.value > 0) {
         userDedosQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -155,13 +134,11 @@ const francesas = new Item ({
 
 francesasAddBtn.addEventListener('click', function() {
     userFrancesasQuantity.value++
-    saveToFirebase();
 })
 
 francesasRemoveBtn.addEventListener('click', function() {
     if (userFrancesasQuantity.value > 0) {
         userFrancesasQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -178,13 +155,11 @@ const gajo = new Item ({
 
 gajoAddBtn.addEventListener('click', function() {
     userGajoQuantity.value++
-    saveToFirebase();
 })
 
 gajoRemoveBtn.addEventListener('click', function() {
     if (userGajoQuantity.value > 0) {
         userGajoQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -201,13 +176,11 @@ const salchicha = new Item ({
 
 salchichaAddBtn.addEventListener('click', function() {
     userSalchichaQuantity.value++
-    saveToFirebase();
 })
 
 salchichaRemoveBtn.addEventListener('click', function() {
     if (userSalchichaQuantity.value > 0) {
         userSalchichaQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -224,13 +197,11 @@ const crema = new Item ({
 
 cremaAddBtn.addEventListener('click', function() {
     userCremaQuantity.value++
-    saveToFirebase();
 })
 
 cremaRemoveBtn.addEventListener('click', function() {
     if (userCremaQuantity.value > 0) {
         userCremaQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -247,13 +218,11 @@ const mayonesa = new Item ({
 
 mayonesaAddBtn.addEventListener('click', function() {
     userMayonesaQuantity.value++
-    saveToFirebase();
 })
 
 mayonesaRemoveBtn.addEventListener('click', function() {
     if (userMayonesaQuantity.value > 0) {
         userMayonesaQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -270,13 +239,11 @@ const catsup = new Item ({
 
 catsupAddBtn.addEventListener('click', function() {
     userCatsupQuantity.value++
-    saveToFirebase();
 })
 
 catsupRemoveBtn.addEventListener('click', function() {
     if (userCatsupQuantity.value > 0) {
         userCatsupQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -293,13 +260,11 @@ const mostaza = new Item ({
 
 mostazaAddBtn.addEventListener('click', function() {
     userMostazaQuantity.value++
-    saveToFirebase();
 })
 
 mostazaRemoveBtn.addEventListener('click', function() {
     if (userMostazaQuantity.value > 0) {
         userMostazaQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -316,13 +281,11 @@ const ranch = new Item ({
 
 ranchAddBtn.addEventListener('click', function() {
     userRanchQuantity.value++
-    saveToFirebase();
 })
 
 ranchRemoveBtn.addEventListener('click', function() {
     if (userRanchQuantity.value > 0) {
         userRanchQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -339,13 +302,11 @@ const buffalo = new Item ({
 
 buffaloAddBtn.addEventListener('click', function() {
     userBuffaloQuantity.value++
-    saveToFirebase();
 })
 
 buffaloRemoveBtn.addEventListener('click', function() {
     if (userBuffaloQuantity.value > 0) {
         userBuffaloQuantity.value--
-        saveToFirebase();
     }   
 })
 
@@ -362,13 +323,11 @@ const bbq = new Item ({
 
 bbqAddBtn.addEventListener('click', function() {
     userBbqQuantity.value++
-    saveToFirebase();
 })
 
 bbqRemoveBtn.addEventListener('click', function() {
     if (userBbqQuantity.value > 0) {
         userBbqQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -385,13 +344,11 @@ const mango = new Item ({
 
 mangoAddBtn.addEventListener('click', function() {
     userMangoQuantity.value++
-    saveToFirebase();
 })
 
 mangoRemoveBtn.addEventListener('click', function() {
     if (userMangoQuantity.value > 0) {
         userMangoQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -408,13 +365,11 @@ const cueritos = new Item ({
 
 cueritosAddBtn.addEventListener('click', function() {
     userCueritosQuantity.value++
-    saveToFirebase();
 })
 
 cueritosRemoveBtn.addEventListener('click', function() {
     if (userCueritosQuantity.value > 0) {
         userCueritosQuantity.value--
-        saveToFirebase();
     }
 })
 
@@ -431,23 +386,32 @@ const elotes = new Item ({
 
 elotesAddBtn.addEventListener('click', function() {
     userElotesQuantity.value++
-    saveToFirebase();
 })
 
 elotesRemoveBtn.addEventListener('click', function() {
     if (userElotesQuantity.value > 0) {
         userElotesQuantity.value--
-        saveToFirebase();
     }
 })
 
+// Save all quantities to Firebase
+function saveToFirebase(val) {
+    const expenses = {
+      quantity: val || 0,
+    };
+    
+    set(ref(database, 'expenses'), expenses);
+  }
+
 // Display Total
 function displayTotal() {
-    const sum = sumArr.reduce((acc, curr) => acc + curr)
+    const sum = sumArr.reduce((a, b) => a + b, 0);
     total.textContent = `Total is: ${sum}`  
     const resultToJson = JSON.stringify(sum)
     localStorage.setItem('total', resultToJson)
     console.log(`Result: ${resultToJson}, Resultt`);
+
+    saveToFirebase(sum)
 }
 //Calc SumArr
 calcBtn.addEventListener('click', function() {
