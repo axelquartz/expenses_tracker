@@ -5,12 +5,17 @@ import { database, ref, set, onValue } from './firebase-init.js';
 function loadFromFirebase() {
     onValue(ref(database, 'expenses'), (snapshot) => {
       const data = snapshot.val() || {};
-      storeValues .push(data.quantity)
-    for (let i = 0; i < data.quantity.length; i++) {
-        storeValues.push(data.quantity[i]);
-        console.log('Push Values', storeValues);
-        
-      }
+      console.log('Data', data);
+
+      data.quantity.forEach(el => {
+        storeValues.push(el)
+      });
+
+      console.log('Push Values', storeValues);
+
+      
+    //   storeValues .push(data.quantity)
+
     //   storeValues.push(data.quantity);
 
       displaySavedVal.textContent = data.quantity || 0;
