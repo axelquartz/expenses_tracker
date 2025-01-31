@@ -43,6 +43,12 @@ class Item {
             console.log(sumArr);
             
         }
+        this.customCalcPrice = function() {
+            const customResult = 1 * userCustomPrice.value;
+            sumArr.push(customResult)
+            console.log(sumArr);
+            
+        }
     }
 }
 
@@ -382,6 +388,15 @@ elotesRemoveBtn.addEventListener('click', function() {
     }
 })
 
+// Custom
+const userCustomPrice = document.getElementById('user-custom-price')
+
+const custom = new Item ({
+    name: 'Custom',
+    unitPrice: userCustomPrice,
+    userQuantity: 1,
+})
+
 // Save all quantities to Firebase
 function saveToFirebase(val) {
     storeValues.push(val)
@@ -428,7 +443,10 @@ calcBtn.addEventListener('click', function() {
         mango.calcPrice()
         cueritos.calcPrice()
         elotes.calcPrice()
+        custom.customCalcPrice()
         displayTotal()
+        console.log('Custom Price', userCustomPrice.value);
+        
     }else {
         console.log('Normal mode');
     displayTotal()
@@ -463,6 +481,7 @@ resetBtn.addEventListener('click', function() {
     userMangoQuantity.value = '';
     userCueritosQuantity.value = '';
     userElotesQuantity.value = '';
+    userCustomPrice.value = '';
 
       // Reset Firebase data
   update(ref(database, 'expenses'), {
@@ -481,7 +500,8 @@ resetBtn.addEventListener('click', function() {
     bbq: 0,
     mango: 0,
     cueritos: 0,
-    elotes: 0
+    elotes: 0,
+    custom: 0
   });
 })
 

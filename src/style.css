@@ -128,6 +128,41 @@
 
     }
 
+    .custom-item-input {
+        background-color: var(--tertiary-color);
+        border-radius: 8px;
+        padding: 16px 0;
+        margin: 12px auto;
+        /* display: flex; */
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .custom-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4px;
+        width: 90%;
+        margin: 4px auto;
+    }
+
+    .custom-input input {
+        width: 80%;
+    }
+
+    .custom-input button {
+        width: 20%;
+    }
+
+    .custom-item-input label {
+        color: var(--primary-color);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+        justify-content: center;
+    }
+
     .input button {
         width: 80%;
         background-color: var(--secondary-color);
@@ -311,6 +346,41 @@
 
     }
 
+    .custom-item-input {
+        background-color: var(--tertiary-color);
+        border-radius: 8px;
+        padding: 16px 0;
+        margin: 12px auto;
+        /* display: flex; */
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .custom-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4px;
+        width: 90%;
+        margin: 4px auto;
+    }
+
+    .custom-input input {
+        width: 80%;
+    }
+
+    .custom-input button {
+        width: 20%;
+    }
+
+    .custom-item-input label {
+        color: var(--primary-color);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+        justify-content: center;
+    }
+
     .input button {
         width: 80%;
         background-color: var(--secondary-color);
@@ -488,6 +558,41 @@
         border: 1px solid var(--primary-color);
         background-color: var(--tertiary-color);
 
+    }
+
+    .custom-item-input {
+        background-color: var(--tertiary-color);
+        border-radius: 8px;
+        padding: 16px 0;
+        margin: 12px auto;
+        /* display: flex; */
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .custom-input {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4px;
+        width: 90%;
+        margin: 4px auto;
+    }
+
+    .custom-input input {
+        width: 80%;
+    }
+
+    .custom-input button {
+        width: 20%;
+    }
+
+    .custom-item-input label {
+        color: var(--primary-color);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+        justify-content: center;
     }
 
     .input button {
