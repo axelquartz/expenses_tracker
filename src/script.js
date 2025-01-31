@@ -33,6 +33,7 @@ const calcBtn = document.querySelector('.calc-btn')
 const resetBtn = document.querySelector('.reset-btn')
 const total = document.querySelector('#total h2')
 const displaySavedVal = document.querySelector('#display-saved-val')
+const submitExpensesBtn = document.querySelector('.submit-expenses-btn')
 
 // Item template
 class Item {
@@ -407,7 +408,7 @@ function displayTotal() {
     localStorage.setItem('total', resultToJson)
     console.log(`Result: ${resultToJson}, Resultt`);
 
-    saveToFirebase(sum)
+    // saveToFirebase(sum)
     return sum
 }
 //Calc SumArr
@@ -436,6 +437,14 @@ calcBtn.addEventListener('click', function() {
         console.log('Normal mode');
     displayTotal()
     }
+})
+
+// Submit Expenses to Firebase
+submitExpensesBtn.addEventListener('click', function() {
+    // saveToFirebase(sum)
+    const sum = sumArr.reduce((a, b) => a + b, 0);
+    saveToFirebase(sum)
+    
 })
 
 // Reset
