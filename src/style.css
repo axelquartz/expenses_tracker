@@ -142,23 +142,40 @@
     .calc-btn {
         width: 88%;
         height: 40px;
-        background-color: green;
-        border: solid 1px green;
+        background-color: greenyellow;
+        border: solid 2px greenyellow;
         border-radius: 8px;
-        color: var(--background-color);
+        color: var(--primary-color);
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    .submit-expenses-btn {
+        width: 12%;
+        height: 40px;
+        border: solid 2px goldenrod;
+        background-color: var(--background-color);
+        border-radius: 8px;
+        color: goldenrod;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+
     }
 
     .reset-btn {
         width: 12%;
         height: 40px;
-        border: solid 1px coral;
+        border: solid 2px coral;
         background-color: var(--background-color);
         border-radius: 8px;
         color: coral;
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
     }
 
 }
@@ -308,23 +325,40 @@
     .calc-btn {
         width: 88%;
         height: 40px;
-        background-color: green;
-        border: solid 1px green;
+        background-color: greenyellow;
+        border: solid 2px greenyellow;
         border-radius: 8px;
-        color: var(--background-color);
+        color: var(--primary-color);
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    .submit-expenses-btn {
+        width: 12%;
+        height: 40px;
+        border: solid 2px goldenrod;
+        background-color: var(--background-color);
+        border-radius: 8px;
+        color: goldenrod;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+
     }
 
     .reset-btn {
         width: 12%;
         height: 40px;
-        border: solid 1px coral;
+        border: solid 2px coral;
         background-color: var(--background-color);
         border-radius: 8px;
         color: coral;
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
     }
 }
 
@@ -470,23 +504,40 @@
     .calc-btn {
         width: 88%;
         height: 40px;
-        background-color: green;
-        border: solid 1px green;
+        background-color: greenyellow;
+        border: solid 2px greenyellow;
         border-radius: 8px;
-        color: var(--background-color);
+        color: var(--primary-color);
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    .submit-expenses-btn {
+        width: 12%;
+        height: 40px;
+        border: solid 2px goldenrod;
+        background-color: var(--background-color);
+        border-radius: 8px;
+        color: goldenrod;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+
     }
 
     .reset-btn {
         width: 12%;
         height: 40px;
-        border: solid 1px coral;
+        border: solid 2px coral;
         background-color: var(--background-color);
         border-radius: 8px;
         color: coral;
         font-size: 16px;
         font-weight: bold;
+        cursor: pointer;
+
     }
 }
 
@@ -502,22 +553,36 @@
 }
 
 .calc-btn:hover {
-    background-color: #444;
+    background-color: green;
+    border : solid 2px green;
     color: var(--background-color);
 }
 
 .calc-btn:active {
-    background-color: #000;
+    background-color: darkgreen;
+    border : solid 2px darkgreen;
     color: var(--background-color);
 }
 
 .reset-btn:hover {
-    background-color: #444;
+    background-color: coral;
     color: var(--background-color);
 }
 
 .reset-btn:active {
-    background-color: #000;
+    background-color: brown;
+    border: solid 2px brown;
+    color: var(--background-color);
+}
+
+.submit-expenses-btn:hover {
+    background-color: goldenrod;
+    color: var(--background-color);
+}
+
+.submit-expenses-btn:active {
+    background-color: darkgoldenrod;
+    border: solid 2px darkgoldenrod;
     color: var(--background-color);
 }
 
