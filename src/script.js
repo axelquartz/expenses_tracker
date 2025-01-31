@@ -7,18 +7,14 @@ function loadFromFirebase() {
       const data = snapshot.val() || {};
       console.log('Data', data);
 
-      data.quantity.forEach(el => {
+
+      data.expenses.forEach(el => {
         storeValues.push(el)
       });
 
       console.log('Push Values', storeValues);
 
-      
-    //   storeValues .push(data.quantity)
-
-    //   storeValues.push(data.quantity);
-
-      displaySavedVal.textContent = data.quantity || 0;
+      displaySavedVal.textContent = data.expenses || 0;
     });
   }
 
@@ -390,7 +386,7 @@ elotesRemoveBtn.addEventListener('click', function() {
 function saveToFirebase(val) {
     storeValues.push(val)
     const expenses = {
-      quantity: storeValues,
+      expenses: storeValues,
     };
     
     set(ref(database, 'expenses'), expenses);
