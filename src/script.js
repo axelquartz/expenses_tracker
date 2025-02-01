@@ -33,7 +33,7 @@ const submitExpensesBtn = document.querySelector('.submit-expenses-btn')
 
 // Item template
 class Item {
-    constructor({name, unitPrice, userQuantity, calcPrice}) {
+    constructor({name, unitPrice, userQuantity}) {
         this.name = name;
         this.unitPrice = unitPrice;
         this.userQuantity = userQuantity;
@@ -448,7 +448,7 @@ calcBtn.addEventListener('click', function() {
         mango.calcPrice()
         cueritos.calcPrice()
         elotes.calcPrice()
-        // custom.customCalcPrice()
+        custom.customCalcPrice()
         displayTotal()
         console.log('Custom Price', userCustomPrice.value);
         
