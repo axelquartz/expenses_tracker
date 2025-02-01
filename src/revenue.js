@@ -1,11 +1,19 @@
 // Import Firebase from the initialization file
 import { database, ref, set, onValue } from './firebase-init.js';
 
-let testArr = [2,4,17,9]
+// Values to be saved
+let storeValues = [8,6]
+let sumArr = []
 
+const calcBtn = document.querySelector('.calc-btn')
+const resetBtn = document.querySelector('.reset-btn')
+const total = document.querySelector('#total h2')
+const submitRevenueBtn = document.querySelector('.submit-revenue-btn')
+
+// Save to DB
 function saveToFirebase() {
     const revenue = {
-        revenue: testArr,
+        revenue: storeValues,
     };
     
     set(ref(database, 'revenue'), revenue);
@@ -16,3 +24,5 @@ function saveToFirebase() {
   }
 
   saveToFirebase()
+
+

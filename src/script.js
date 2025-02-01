@@ -390,11 +390,16 @@ elotesRemoveBtn.addEventListener('click', function() {
 
 // Custom
 const userCustomPrice = document.getElementById('user-custom-price')
+const customAddBtn = document.getElementById('custom-add-btn')
 
 const custom = new Item ({
     name: 'Custom',
     unitPrice: userCustomPrice,
     userQuantity: 1,
+})
+
+customAddBtn.addEventListener('click', function() {
+    custom.customCalcPrice()
 })
 
 // Save all quantities to Firebase
@@ -443,7 +448,7 @@ calcBtn.addEventListener('click', function() {
         mango.calcPrice()
         cueritos.calcPrice()
         elotes.calcPrice()
-        custom.customCalcPrice()
+        // custom.customCalcPrice()
         displayTotal()
         console.log('Custom Price', userCustomPrice.value);
         

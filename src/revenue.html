@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./revenue.js" defer type="module"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Revenue</title>
 </head>
 <body>
-    <h1>Revenue</h1>
+    <title>Revenue Tracker</title>
+</head>
+<body>
+    <div id="all-items">
+        <div id="header">
+            <h1>Revenue Tracker</h1>
+            <button class="dark-mode-toggle">Dark Mode</button>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="./src/info.html">info</a></li>
+                <li><a href="../index.html">Expenses</a></li>
+            </ul>
+        </div>
+        <div class="item-input">
+            <label for="item-name">Boneless Grande - 125 MXN</label>
+            <div class="input">
+                <input type="number" name="item-value" id="boneless-grande-quantity">
+                <button id="boneless-grande-add-btn">+</button>
+                <button id="boneless-grande-remove-btn">-</button>
+            </div>
+        </div>
+        <div class="custom-item-input">
+            <label for="item-name">Custom</label>
+            <div class="custom-input">
+                <input type="number" name="item-value" id="user-custom-price">
+                <button id="custom-add-btn">Add</button>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <div class="result-btns">
+            <button class="calc-btn">Calculate</button>
+            <button class="reset-btn">X</button>
+            <button class="submit-revenue-btn">Submit</button>
+        </div>
+        <div id="total">
+            <h2>--</h2>
+        </div>
+    </div>
 </body>
 </html>
