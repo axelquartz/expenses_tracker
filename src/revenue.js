@@ -96,7 +96,7 @@ const userBonelessChicoQuantity = document.getElementById('user-boneless-chico-q
 
 const bonelessChico = new Item ({
     name: 'Boneless Chico',
-    unitPrice: 100,
+    unitPrice: 75,
     userQuantity: userBonelessChicoQuantity,
 })
 
@@ -117,7 +117,7 @@ const userAlitasGrandeQuantity = document.getElementById('user-alitas-grande-qua
 
 const alitasGrande = new Item ({
     name: 'Alitas Grande',
-    unitPrice: 150,
+    unitPrice: 125,
     userQuantity: userAlitasGrandeQuantity,
 })
 
@@ -138,7 +138,7 @@ const userAlitasMedianoQuantity = document.getElementById('user-alitas-mediano-q
 
 const alitasMediano = new Item ({
     name: 'Alitas Mediano',
-    unitPrice: 140,
+    unitPrice: 110,
     userQuantity: userAlitasMedianoQuantity,
 })
 
@@ -159,7 +159,7 @@ const userAlitasChicoQuantity = document.getElementById('user-alitas-chico-quant
 
 const alitasChico = new Item ({
     name: 'Alitas Chico',
-    unitPrice: 130,
+    unitPrice: 75,
     userQuantity: userAlitasChicoQuantity,
 })
 
@@ -180,7 +180,7 @@ const userDedosGrandeQuantity = document.getElementById('user-dedos-grande-quant
 
 const dedosGrande = new Item ({
     name: 'Dedos de Queso Grande',
-    unitPrice: 180,
+    unitPrice: 135,
     userQuantity: userDedosGrandeQuantity,
 })
 
@@ -201,7 +201,7 @@ const userDedosMedianoQuantity = document.getElementById('user-dedos-mediano-qua
 
 const dedosMediano = new Item ({
     name: 'Dedos de Queso Mediano',
-    unitPrice: 170,
+    unitPrice: 120,
     userQuantity: userDedosMedianoQuantity,
 })
 
@@ -222,7 +222,7 @@ const userDedosChicoQuantity = document.getElementById('user-dedos-chico-quantit
 
 const dedosChico = new Item ({
     name: 'Dedos de Queso Chico',
-    unitPrice: 160,
+    unitPrice: 80,
     userQuantity: userDedosChicoQuantity,
 })
 
@@ -243,7 +243,7 @@ const userTostilocosQuantity = document.getElementById('user-tostilocos-quantity
 
 const tostilocos = new Item ({
     name: 'Tostilocos',
-    unitPrice: 200,
+    unitPrice: 45,
     userQuantity: userTostilocosQuantity,
 })
 
@@ -264,7 +264,7 @@ const userTostielotesQuantity = document.getElementById('user-tostielotes-quanti
 
 const tostielotes = new Item ({
     name: 'Tostielotes',
-    unitPrice: 250,
+    unitPrice: 55,
     userQuantity: userTostielotesQuantity,
 })
 
@@ -285,7 +285,7 @@ const userBanderillaSinQuesoQuantity = document.getElementById('user-banderilla-
 
 const banderillaSinQueso = new Item ({
     name: 'Banderilla sin Queso',
-    unitPrice: 300,
+    unitPrice: 25,
     userQuantity: userBanderillaSinQuesoQuantity,
 })
 
@@ -306,7 +306,7 @@ const userBanderillaConQuesoQuantity = document.getElementById('user-banderilla-
 
 const banderillaConQueso = new Item ({
     name: 'Banderilla con Queso',
-    unitPrice: 300,
+    unitPrice: 35,
     userQuantity: userBanderillaConQuesoQuantity,
 })
 
@@ -327,7 +327,7 @@ const userEloteSinCremaQuantity = document.getElementById('user-elote-sin-crema-
 
 const eloteSinCrema = new Item ({
     name: 'Elote sin Crema',
-    unitPrice: 300,
+    unitPrice: 25,
     userQuantity: userEloteSinCremaQuantity,
 })
 
@@ -348,7 +348,7 @@ const userEloteConCremaQuantity = document.getElementById('user-elote-con-crema-
 
 const eloteConCrema = new Item ({
     name: 'Elote con Crema',
-    unitPrice: 300,
+    unitPrice: 35,
     userQuantity: userEloteConCremaQuantity,
 })
 
@@ -369,7 +369,7 @@ const userCombinadoGrandeQuantity = document.getElementById('user-combinado-gran
 
 const combinadoGrande = new Item ({
     name: 'Combinado Grande',
-    unitPrice: 300,
+    unitPrice: 75,
     userQuantity: userCombinadoGrandeQuantity,
 })
 
@@ -390,7 +390,7 @@ const userCombinadoMedianoQuantity = document.getElementById('user-combinado-med
 
 const combinadoMediano = new Item ({
     name: 'Combinado Mediano',
-    unitPrice: 300,
+    unitPrice: 60,
     userQuantity: userCombinadoMedianoQuantity,
 })
 
@@ -411,7 +411,7 @@ const userCombinadoChicoQuantity = document.getElementById('user-combinado-chico
 
 const combinadoChico = new Item ({
     name: 'Combinado Chico',
-    unitPrice: 300,
+    unitPrice: 50,
     userQuantity: userCombinadoChicoQuantity,
 })
 
@@ -432,7 +432,7 @@ const userDipQuantity = document.getElementById('user-dip-quantity')
 
 const dip = new Item ({
     name: 'Dip',
-    unitPrice: 300,
+    unitPrice: 10,
     userQuantity: userDipQuantity,
 })
 
@@ -453,7 +453,7 @@ const userRefrescoQuantity = document.getElementById('user-refresco-quantity')
 
 const refresco = new Item ({
     name: 'Refresco',
-    unitPrice: 300,
+    unitPrice: 25,
     userQuantity: userRefrescoQuantity,
 })
 
@@ -552,6 +552,25 @@ resetBtn.addEventListener('click', function() {
     sumArr = []
     total.textContent = '--' 
     userBonelessGrandeQuantity.value = '';
+    userBonelessMedianoQuantity.value = '';
+    userBonelessChicoQuantity.value = '';
+    userAlitasGrandeQuantity.value = '';
+    userAlitasMedianoQuantity.value = '';
+    userAlitasChicoQuantity.value = '';
+    userDedosGrandeQuantity.value = '';
+    userDedosMedianoQuantity.value = '';
+    userDedosChicoQuantity.value = '';
+    userTostilocosQuantity.value = '';
+    userTostielotesQuantity.value = '';
+    userBanderillaSinQuesoQuantity.value = '';
+    userBanderillaConQuesoQuantity.value = '';
+    userEloteSinCremaQuantity.value = '';
+    userEloteConCremaQuantity.value = '';
+    userCombinadoGrandeQuantity.value = '';
+    userCombinadoMedianoQuantity.value = '';
+    userCombinadoChicoQuantity.value = '';
+    userDipQuantity.value = '';
+    userRefrescoQuantity.value = '';
     userCustomPrice.value = '';
 
     
