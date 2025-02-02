@@ -398,9 +398,9 @@ const custom = new Item ({
     userQuantity: 1,
 })
 
-customAddBtn.addEventListener('click', function() {
-    custom.customCalcPrice()
-})
+// customAddBtn.addEventListener('click', function() {
+//     custom.customCalcPrice()
+// })
 
 // Save all quantities to Firebase
 function saveToFirebase(val) {

@@ -206,7 +206,7 @@
 
     }
 
-    .submit-expenses-btn {
+    .submit-expenses-btn, .submit-revenue-btn {
         width: 12%;
         height: 40px;
         border: solid 2px goldenrod;
@@ -424,7 +424,7 @@
 
     }
 
-    .submit-expenses-btn {
+    .submit-expenses-btn, .submit-revenue-btn {
         width: 12%;
         height: 40px;
         border: solid 2px goldenrod;
@@ -638,7 +638,7 @@
 
     }
 
-    .submit-expenses-btn {
+    .submit-expenses-btn, .submit-revenue-btn {
         width: 12%;
         height: 40px;
         border: solid 2px goldenrod;

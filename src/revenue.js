@@ -1,8 +1,24 @@
 // Import Firebase from the initialization file
 import { database, ref, set, onValue } from './firebase-init.js';
 
+// Load quantities from Firebase
+function loadFromFirebase() {
+        onValue(ref(database, 'revenue'), (snapshot) => {
+            const data = snapshot.val() || {};
+            console.log('Data', data);
+
+            data.revenue.forEach(el => {
+                storeValues.push(el)
+            });
+
+            console.log('Push Values', storeValues);
+        });
+    }
+
+loadFromFirebase();
+
 // Values to be saved
-let storeValues = [8,6]
+let storeValues = []
 let sumArr = []
 
 const calcBtn = document.querySelector('.calc-btn')
@@ -61,12 +77,14 @@ const custom = new Item ({
     userQuantity: 1,
 })
 
-customAddBtn.addEventListener('click', function() {
-    custom.customCalcPrice()
-})
+// customAddBtn.addEventListener('click', function() {
+//     custom.customCalcPrice()
+// })
 
 // Save to DB
-function saveToFirebase() {
+function saveToFirebase(val) {
+    storeValues.push(val)
+
     const revenue = {
         revenue: storeValues,
     };
@@ -95,9 +113,8 @@ calcBtn.addEventListener('click', function() {
         console.log('Empty mode');
         
         bonelessGrande.calcPrice()
-        // custom.customCalcPrice()
+        custom.customCalcPrice()
         displayTotal()
-        console.log('Custom Price', userCustomPrice.value);
         
     }else {
         console.log('Normal mode');
@@ -105,6 +122,19 @@ calcBtn.addEventListener('click', function() {
     }
 })
 
-  saveToFirebase()
+// Submit Revenue to DB
+submitRevenueBtn.addEventListener('click', function() {
+    const sum = sumArr.reduce((a, b) => a + b, 0);
+    saveToFirebase(sum)
+})
 
+// Reset
+resetBtn.addEventListener('click', function() {
+    sumArr = []
+    total.textContent = '--' 
+    userBonelessGrandeQuantity.value = '';
+    userCustomPrice.value = '';
+
+    
+})
 
