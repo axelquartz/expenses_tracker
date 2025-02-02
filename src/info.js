@@ -1,32 +1,44 @@
 // Import Firebase from the initialization file
 import { database, ref, set, onValue } from './firebase-init.js';
 
-const displayIncome = document.querySelector('.display-income');
-const displayName = document.querySelector('.display-name');
-let storeValues = []
+const displayExpenses = document.querySelector('.display-expenses');
+const displayExpensesName = document.querySelector('.display-expenses-name');
+const displayRevenue = document.querySelector('.display-revenue');
+const displayRevenueName = document.querySelector('.display-revenue-name');
+let storeExpensesValues = []
+let storeRevenueValues = []
 
-function loadFromFirebase() {
+function loadExpensesFromFirebase() {
     onValue(ref(database, 'expenses'), (snapshot) => {
       const data = snapshot.val() || {};
       console.log('Data', data);
 
       data.expenses.forEach(el => {
-        storeValues.push(el)
+        storeExpensesValues.push(el)
+
       });
 
-      console.log('Push Values', storeValues);
+    displayExpensesName.textContent = 'Expenses';
+    displayExpenses.textContent = data.expenses || 0;
+    });
+  }
+
+  function loadRevenueFromFirebase() {
+    onValue(ref(database, 'revenue'), (snapshot) => {
+      const data = snapshot.val() || {};
       console.log('Data', data);
-      
 
-      
-    //   storeValues .push(data.quantity)
+      data.revenue.forEach(el => {
+        storeRevenueValues.push(el)
 
-    //   storeValues.push(data.quantity);
-    displayName.textContent = 'Expenses';
-    displayIncome.textContent = data.expenses || 0;
+      });
+
+    displayRevenueName.textContent = 'Revenue';
+    displayRevenue.textContent = data.revenue || 0;
     });
   }
 
 
   // Initial load
-loadFromFirebase();
+  loadExpensesFromFirebase();
+  loadRevenueFromFirebase();
