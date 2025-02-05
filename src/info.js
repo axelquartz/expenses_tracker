@@ -9,8 +9,12 @@ const displayTotalExpenses = document.querySelector('.display-total-expenses');
 const displayTotalExpensesName = document.querySelector('.display-total-expenses-name');
 const displayTotalRevenue = document.querySelector('.display-total-revenue');
 const displayTotalRevenueName = document.querySelector('.display-total-revenue-name');
+const displayProfitabilityPercentage = document.getElementById('display-profitability-percentage');
 let storeExpensesValues = []
 let storeRevenueValues = []
+let acomulatedExpenses = 0; // Declare outside
+let acomulatedRevenue = 0;
+
 
 function loadExpensesFromFirebase() {
     onValue(ref(database, 'expenses'), (snapshot) => {
@@ -26,18 +30,19 @@ function loadExpensesFromFirebase() {
       console.log('storeRevenueValues', storeRevenueValues);
       
       
-      
       if (storeExpensesValues.length < 15) {
-        const acomulatedExpenses = storeExpensesValues.reduce((a, b) => a + b, 0); 
+        acomulatedExpenses = storeExpensesValues.reduce((a, b) => a + b, 0); 
         console.log(`${acomulatedExpenses} (${storeExpensesValues.length})`);
         displayTotalExpensesName.textContent = 'Expenses Acomulated';
         displayTotalExpenses.textContent = acomulatedExpenses;
-        
+        console.log('acomulatedExpenses in for loop', acomulatedExpenses);
       }
       
+      console.log('acomulatedExpenses in function out of for loop', acomulatedExpenses);
 
     displayExpensesName.textContent = 'Expenses List';
     displayExpenses.textContent = data.expenses || 0;
+
     });
   }
 
@@ -52,7 +57,7 @@ function loadExpensesFromFirebase() {
       });
 
       if (storeRevenueValues.length < 15) {
-        const acomulatedRevenue = storeRevenueValues.reduce((a, b) => a + b, 0); 
+        acomulatedRevenue = storeRevenueValues.reduce((a, b) => a + b, 0); 
         console.log(`${acomulatedRevenue} (${storeRevenueValues.length})`);
         displayTotalRevenueName.textContent = 'Revenue Acomulated';
         displayTotalRevenue.textContent = acomulatedRevenue;
@@ -69,4 +74,16 @@ function loadExpensesFromFirebase() {
   loadExpensesFromFirebase();
   loadRevenueFromFirebase();
 
+  // Calculate Revenue
+  setTimeout(() => {
+    let profitabilityPercentage = ((acomulatedRevenue / acomulatedExpenses) * 100) - 100;
+    profitabilityPercentage = Math.round(profitabilityPercentage * 100) / 100;
+    if (profitabilityPercentage > 0) {
+      displayProfitabilityPercentage.textContent = '+ ' + profitabilityPercentage + ' %';
+    } else if (profitabilityPercentage < 0) {
+      displayProfitabilityPercentage.textContent = '- ' + profitabilityPercentage + ' %';
+    } else {
+      displayProfitabilityPercentage.textContent = profitabilityPercentage + ' %';
+    }
+  }, 300);
   
