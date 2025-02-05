@@ -84,3 +84,35 @@ function loadExpensesFromFirebase() {
     }
   }, 300);
   
+
+  async function sendDataToDeepSeek(data) {
+    const apiKey = 'sk-5cc5169a3a7d4115affb67f599b4b440';
+    const endpoint = 'https://api.deepseek.com/recommendations';
+
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    return result;
+}
+
+// Example data
+const businessData = {
+    revenue: 1000,
+    expenses: 600,
+    profit: 400,
+};
+
+sendDataToDeepSeek(businessData)
+    .then(recommendations => {
+        console.log('Recommendations:', recommendations);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });

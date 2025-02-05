@@ -531,3 +531,5 @@ if (savedTheme === 'dark') {
     rootElement.setAttribute('data-theme', savedTheme)
     console.log(savedTheme);
 }
+
+
