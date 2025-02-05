@@ -15,7 +15,6 @@ let storeRevenueValues = []
 let acomulatedExpenses = 0; // Declare outside
 let acomulatedRevenue = 0;
 
-
 function loadExpensesFromFirebase() {
     onValue(ref(database, 'expenses'), (snapshot) => {
       const data = snapshot.val() || {};
@@ -28,7 +27,6 @@ function loadExpensesFromFirebase() {
 
       console.log('storeExpensesValues', storeExpensesValues);
       console.log('storeRevenueValues', storeRevenueValues);
-      
       
       if (storeExpensesValues.length < 15) {
         acomulatedExpenses = storeExpensesValues.reduce((a, b) => a + b, 0); 
@@ -68,7 +66,6 @@ function loadExpensesFromFirebase() {
     displayRevenue.textContent = data.revenue || 0;
     });
   }
-
 
   // Initial load
   loadExpensesFromFirebase();
