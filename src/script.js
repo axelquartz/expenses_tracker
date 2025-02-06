@@ -532,4 +532,3 @@ if (savedTheme === 'dark') {
     console.log(savedTheme);
 }
 
-
