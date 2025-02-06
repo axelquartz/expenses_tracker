@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "airtable": "^0.12.2",
-    "firebase": "^11.2.0"
+    "firebase": "^11.2.0",
+    "openai": "^4.83.0"
   }
 }

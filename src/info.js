@@ -10,6 +10,7 @@ const displayTotalExpensesName = document.querySelector('.display-total-expenses
 const displayTotalRevenue = document.querySelector('.display-total-revenue');
 const displayTotalRevenueName = document.querySelector('.display-total-revenue-name');
 const displayProfitabilityPercentage = document.getElementById('display-profitability-percentage');
+const displayRecommendations = document.getElementById('display-recommendations');
 let storeExpensesValues = []
 let storeRevenueValues = []
 let acomulatedExpenses = 0; // Declare outside
@@ -82,37 +83,63 @@ function loadExpensesFromFirebase() {
     } else {
       displayProfitabilityPercentage.textContent = profitabilityPercentage + ' %';
     }
-  }, 300);
+  }, 1000);
   
+    // const openai = new OpenAI({
+    //         baseURL: 'https://api.deepseek.com',
+    //         apiKey: '5cc5169a3a7d4115affb67f599b4b440'
+    // });
+    
+    // async function main() {
+    //   const completion = await openai.chat.completions.create({
+    //     messages: [{ role: "system", content: "You are a helpful assistant." }],
+    //     model: "deepseek-chat",
+    //   });
+    
+    //   console.log(completion.choices[0].message.content);
+    // }
+    
+    // main();
 
-  async function sendDataToDeepSeek(data) {
-    const apiKey = 'sk-5cc5169a3a7d4115affb67f599b4b440';
-    const endpoint = 'https://api.deepseek.com/recommendations';
-
-    const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify(data)
-    });
-
-    const result = await response.json();
-    return result;
-}
-
-// Example data
-const businessData = {
-    revenue: 1000,
-    expenses: 600,
-    profit: 400,
-};
-
-sendDataToDeepSeek(businessData)
-    .then(recommendations => {
-        console.log('Recommendations:', recommendations);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    async function sendDataToBackend(data) {
+      const endpoint = 'http://localhost:3000/api/recommendations'; // Your backend endpoint
+  
+      try {
+          const response = await fetch(endpoint, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+          });
+  
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+  
+          const result = await response.json();
+          return result;
+      } catch (error) {
+          console.error('Error:', error);
+          throw error;
+      }
+  }
+  
+  // Example data
+  const businessData = {
+      revenue: 1000,
+      expenses: 600,
+      profit: 400,
+  };
+  
+  sendDataToBackend(businessData)
+      .then(recommendations => {
+          // Process the recommendations
+          displayRecommendations.textContent = recommendations;
+          console.log('Recommendations:', recommendations);
+      })
+      .catch(error => {
+          // Handle errors  
+          displayRecommendations.textContent = error.message;
+          console.error('Error:', error);
+      });
