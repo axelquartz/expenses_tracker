@@ -10,7 +10,7 @@ const displayTotalExpensesName = document.querySelector('.display-total-expenses
 const displayTotalRevenue = document.querySelector('.display-total-revenue');
 const displayTotalRevenueName = document.querySelector('.display-total-revenue-name');
 const displayProfitabilityPercentage = document.getElementById('display-profitability-percentage');
-const displayRecommendations = document.getElementById('display-recommendations');
+const displayDifference = document.getElementById('display-difference');
 let storeExpensesValues = []
 let storeRevenueValues = []
 let acomulatedExpenses = 0; // Declare outside
@@ -82,6 +82,11 @@ function loadExpensesFromFirebase() {
       displayProfitabilityPercentage.textContent = '- ' + profitabilityPercentage + ' %';
     } else {
       displayProfitabilityPercentage.textContent = profitabilityPercentage + ' %';
+    }
+    if (acomulatedRevenue - acomulatedExpenses > 0) {
+      displayDifference.textContent = '+ ' + (acomulatedRevenue - acomulatedExpenses) + ' $';
+    } else if (acomulatedRevenue - acomulatedExpenses < 0) {
+      displayDifference.textContent = '- ' + (acomulatedRevenue - acomulatedExpenses) + ' $';
     }
   }, 1000);
   

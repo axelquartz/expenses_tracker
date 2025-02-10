@@ -7,3 +7,15 @@ body {
     background-color: greenyellow;
     border-radius: 8px;
 }
+
+.display-data {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.display-results {
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+}
