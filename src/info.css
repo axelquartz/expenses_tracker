@@ -28,3 +28,20 @@ body {
     border-radius: 8px;
 }
 
+p, .display-revenue {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+li {
+    list-style: none;
+    margin: 4px 4px;
+    font-weight: 600;
+    background-color: #fcdcdc;
+}
+
+.display-total-expenses, .display-total-revenue {
+    background-color: #d1ff96;
+    border-radius: 8px;
+}
