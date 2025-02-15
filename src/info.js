@@ -29,13 +29,11 @@ function loadExpensesFromFirebase() {
       console.log('storeExpensesValues', storeExpensesValues);
       console.log('storeRevenueValues', storeRevenueValues);
       
-      if (storeExpensesValues.length < 15) {
         acomulatedExpenses = storeExpensesValues.reduce((a, b) => a + b, 0); 
         console.log(`${acomulatedExpenses} (${storeExpensesValues.length})`);
         displayTotalExpensesName.textContent = 'Expenses Acomulated';
         displayTotalExpenses.textContent = acomulatedExpenses;
         console.log('acomulatedExpenses in for loop', acomulatedExpenses);
-      }
       
       console.log('acomulatedExpenses in function out of for loop', acomulatedExpenses);
 
@@ -55,13 +53,12 @@ function loadExpensesFromFirebase() {
 
       });
 
-      if (storeRevenueValues.length < 15) {
         acomulatedRevenue = storeRevenueValues.reduce((a, b) => a + b, 0); 
         console.log(`${acomulatedRevenue} (${storeRevenueValues.length})`);
         displayTotalRevenueName.textContent = 'Revenue Acomulated';
         displayTotalRevenue.textContent = acomulatedRevenue;
         
-      }
+
 
     displayRevenueName.textContent = 'Revenue List';
     displayRevenue.textContent = data.revenue || 0;
@@ -72,7 +69,7 @@ function loadExpensesFromFirebase() {
   loadExpensesFromFirebase();
   loadRevenueFromFirebase();
 
-  // Calculate Revenue
+  // Calculate Profitability
   setTimeout(() => {
     let profitabilityPercentage = ((acomulatedRevenue / acomulatedExpenses) * 100) - 100;
     profitabilityPercentage = Math.round(profitabilityPercentage * 100) / 100;
