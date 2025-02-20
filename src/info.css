@@ -41,7 +41,7 @@ li {
     background-color: #fcdcdc;
 }
 
-.display-total-expenses, .display-total-revenue {
+.display-total-expenses, .display-total-revenue, .display-total-days {
     background-color: #d1ff96;
     border-radius: 8px;
 }

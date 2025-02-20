@@ -5,6 +5,7 @@ const displayExpenses = document.querySelector('.display-expenses');
 const displayRevenue = document.querySelector('.display-revenue');
 const displayTotalExpenses = document.querySelector('.display-total-expenses');
 const displayTotalRevenue = document.querySelector('.display-total-revenue');
+const displayTotalDays = document.querySelector('.display-total-days');
 const displayProfitabilityPercentage = document.getElementById('display-profitability-percentage');
 const displayDifference = document.getElementById('display-difference');
 let storeExpensesValues = []
@@ -55,6 +56,7 @@ function loadExpensesFromFirebase() {
         acomulatedRevenue = storeRevenueValues.reduce((a, b) => a + b, 0); 
         console.log(`${acomulatedRevenue} (${storeRevenueValues.length})`);
         displayTotalRevenue.textContent = acomulatedRevenue;
+        displayTotalDays.textContent = storeRevenueValues.length
         
 
 
